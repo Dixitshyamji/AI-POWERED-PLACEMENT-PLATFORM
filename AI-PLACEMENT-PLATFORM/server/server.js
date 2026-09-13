@@ -20,7 +20,7 @@ const allowedOrigins = [
   'http://localhost:3000',
   'http://localhost:5173',
   process.env.CLIENT_URL,
-  'https://ai-powered-placement-platform-5.onrender.com'
+  'https://ai-powered-placement-platform-7.onrender.com'
 ].filter(Boolean); // removes undefined/empty values
 
 app.use(cors({

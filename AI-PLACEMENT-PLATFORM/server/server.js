@@ -38,9 +38,16 @@ app.use(errorHandler);
 const pool = require('./config/db');
 
 const PORT = process.env.PORT || 5001;
-app.listen(PORT, async () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-  if (pool.testConnection) {
-    await pool.testConnection();
+
+app.listen(PORT, '0.0.0.0', async () => {
+  console.log(`Server running on port ${PORT}`);
+  
+  if (pool && pool.testConnection) {
+    try {
+      await pool.testConnection();
+      console.log('Database connected successfully');
+    } catch (err) {
+      console.error('Database connection failed:', err.message);
+    }
   }
 });

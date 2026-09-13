@@ -1,5 +1,5 @@
-Ascend — AI-Powered Placement Preparation Platform
-Ascend is a full-stack web application that helps students prepare for campus placements. Users can upload their resume to get an instant AI-generated ATS score, and check their overall Placement Readiness Score — a single metric that tells them how prepared they are, along with personalized improvement suggestions if they're not ready yet.
+Elevate — AI-Powered Placement Preparation Platform
+Elevate is a full-stack web application that helps students prepare for campus placements. Users can upload their resume to get an instant AI-generated ATS score, and check their overall Placement Readiness Score — a single metric that tells them how prepared they are, along with personalized improvement suggestions if they're not ready yet.
 ✨ Key Features
 📄 AI Resume Analyzer
 Upload your resume (PDF)

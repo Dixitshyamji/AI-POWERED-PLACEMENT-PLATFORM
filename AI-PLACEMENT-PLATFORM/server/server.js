@@ -15,7 +15,26 @@ const { notFound, errorHandler } = require('./middleware/errorMiddleware');
 
 const app = express();
 
-app.use(cors());
+// Allowed origins for CORS
+const allowedOrigins = [
+  'http://localhost:3000',
+  'http://localhost:5173',
+  process.env.CLIENT_URL,
+  'https://ai-powered-placement-platform-5.onrender.com'
+].filter(Boolean); // removes undefined/empty values
+
+app.use(cors({
+  origin: function (origin, callback) {
+    // allow requests with no origin (like mobile apps, curl, Postman)
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS: ' + origin));
+    }
+  },
+  credentials: true
+}));
+
 app.use(express.json({ limit: '2mb' }));
 
 const limiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 300 });

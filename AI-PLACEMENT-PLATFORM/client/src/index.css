@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-paper text-ink font-body;
+}
+
+h1, h2, h3, h4 {
+  @apply font-display;
+}
+
+/* faint background watermark using the app logo */
+.watermark-bg {
+  position: relative;
+}
+.watermark-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('./assets/logo.svg');
+  background-repeat: no-repeat;
+  background-position: 92% 8%;
+  background-size: 140px;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 0;
+}
+.watermark-bg > * {
+  position: relative;
+  z-index: 1;
+}
